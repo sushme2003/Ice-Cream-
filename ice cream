@@ -1,0 +1,29 @@
+let fPrice = {};
+let fQuantity = {};
+function add(flavor,price,quantity) {
+        fPrice[flavor] = price;
+        fQuantity[flavor] = quantity;
+
+        console.log("Ice cream flavor:"+flavor+"added/updated with price"+price+ "and quantity:"+quantity);
+}
+function tc() {
+    let cost=0;
+    for(let flavor in flavorPrice) {
+        const price=flavorPrice[flavor];
+        const quantity=flavorQuantity[flavor];
+       cost+=price*quantity;
+    }
+    console.log("total cost="+cost);
+}
+while (true) {
+        let flavor = prompt("Enter ice cream flavor or type exit to stop:");
+        if (flavor.toLowerCase()==='exit') {
+            break; 
+            }
+        let price = parseFloat(prompt("Enter the price of the ice cream: "));
+        let quantity = parseInt(prompt("Enter the quantity of the ice cream: "), 10);
+        add(flavor, price, quantity);
+    }
+
+    tc();
+
